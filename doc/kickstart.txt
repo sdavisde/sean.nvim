@@ -1,4 +1,0 @@
-================================================================================
-SEAN NEOVIM SETTINGS
-
-I have cloned the kickstart.nvim project into this repo.
