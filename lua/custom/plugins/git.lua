@@ -1,0 +1,32 @@
+-- return {
+--   'kdheepak/lazygit.nvim',
+--   lazy = true,
+--   cmd = {
+--     'LazyGit',
+--     'LazyGitConfig',
+--     'LazyGitCurrentFile',
+--     'LazyGitFilter',
+--     'LazyGitFilterCurrentFile',
+--   },
+--   -- optional for floating window border decoration
+--   dependencies = {
+--     'nvim-lua/plenary.nvim',
+--   },
+--   -- setting the keybinding for LazyGit with 'keys' is recommended in
+--   -- order to load the plugin when the command is run for the first time
+--   keys = {
+--     { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
+--   },
+-- }
+return {
+  'voldikss/vim-floaterm',
+  -- config = function()
+  --   require('vim-floaterm').setup()
+  --   local map = function(keys, func, desc, mode)
+  --     mode = mode or 'n'
+  --     vim.keymap.set(mode, keys, func, { desc = 'LazyGit: ' .. desc })
+  --   end
+  --
+  --   map('<leader>g<CR>', '<cmd>:FloatermNew lazygit<CR>', '[G]it')
+  -- end,
+}

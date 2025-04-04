@@ -16,7 +16,7 @@ My neovim configuration, targeting TS development
 ['stable'](https://github.com/neovim/neovim/releases/tag/stable)
 
 ### Install External Dependencies
-
+ 
 External Requirements:
 - Basic utils: `git`, `make`, `unzip`, C Compiler (`gcc`)
 - [ripgrep](https://github.com/BurntSushi/ripgrep#installation)

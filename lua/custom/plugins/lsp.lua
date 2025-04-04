@@ -290,4 +290,17 @@ return {
       }
     end,
   },
+
+  -- lspsaga
+  {
+    'nvimdev/lspsaga.nvim',
+    config = function()
+      require('lspsaga').setup {}
+      vim.keymap.set('n', '<leader>hd', '<cmd>Lspsaga hover_doc<CR>', { desc = '[H]over [D]oc' })
+    end,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter', -- optional
+      'nvim-tree/nvim-web-devicons', -- optional
+    },
+  },
 }
