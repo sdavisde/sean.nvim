@@ -54,4 +54,35 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 vim.keymap.set('n', '<leader>g<CR>', '<cmd>:FloatermNew lazygit<CR>', { desc = '[G]it' })
 
+local function toggle_todo()
+  local line = vim.api.nvim_get_current_line()
+  local new_line = nil
+
+  if line:find '%[ %]' then
+    new_line = line:gsub('%[ %]', '[x]', 1)
+  elseif line:find '%[x%]' then
+    new_line = line:gsub('%[x%]', '[ ]', 1)
+  end
+
+  if new_line then
+    vim.api.nvim_set_current_line(new_line)
+  end
+end
+
+local function add_todo_below()
+  local row = unpack(vim.api.nvim_win_get_cursor(0))
+  vim.api.nvim_buf_set_lines(0, row, row, true, { '- [ ] ' })
+  vim.api.nvim_win_set_cursor(0, { row + 1, 5 })
+end
+
+local function clear_todo()
+  local line = vim.api.nvim_get_current_line()
+  local new_line = line:gsub('%[.]', '')
+  vim.api.nvim_set_current_line(new_line)
+end
+
+-- Keymaps
+vim.keymap.set('n', '<leader>tt', toggle_todo, { desc = 'Toggle TODO' })
+vim.keymap.set('n', '<leader>ta', add_todo_below, { desc = 'Add TODO below' })
+vim.keymap.set('n', '<leader>tc', clear_todo, { desc = 'Clear TODO checkbox' })
 -- vim: ts=2 sts=2 sw=2 et

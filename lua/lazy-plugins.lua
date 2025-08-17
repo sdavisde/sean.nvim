@@ -11,26 +11,18 @@ require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   require 'custom/plugins/autocomplete',
-
   require 'custom/plugins/comments',
-
   require 'custom/plugins/format',
-
   require 'custom/plugins/lint',
-
   require 'custom/plugins/lsp',
-
   require 'custom/plugins/mini',
-
   require 'custom/plugins/navigation',
-
   require 'custom/plugins/theme',
-
   require 'custom/plugins/treesitter',
-
   require 'custom/plugins/which-key',
-
   require 'custom/plugins/git',
+  require 'custom/plugins/colors',
+  require 'custom/plugins/task-timer',
 
   -- require 'kickstart.plugins.debug',
   require 'kickstart.plugins.indent_line',
