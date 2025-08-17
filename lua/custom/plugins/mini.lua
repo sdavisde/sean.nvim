@@ -18,6 +18,19 @@ return {
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
 
+      -- Fuzzy finder
+      require('mini.pick').setup()
+
+      vim.keymap.set('n', '<leader>sf', function()
+        MiniPick.builtin.files { tool = 'rg' }
+      end, { desc = '[S]earch [F]iles' })
+
+      vim.keymap.set('n', '<leader>sg', function()
+        MiniPick.builtin.grep_live { tool = 'rg' }
+      end, { desc = '[S]earch by [G]rep' })
+
+      -- vim.keymap.set('n', '<leader>s_', function() end, { desc = '[S]earch []' })
+
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
