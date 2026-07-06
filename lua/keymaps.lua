@@ -52,8 +52,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.keymap.set('n', '<leader>g<CR>', '<cmd>:FloatermNew lazygit<CR>', { desc = '[G]it' })
-
 local function toggle_todo()
   local line = vim.api.nvim_get_current_line()
   local new_line = nil
